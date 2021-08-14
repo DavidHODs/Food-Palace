@@ -28,8 +28,8 @@ class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
         }
         return render(request, 'restaurant/dashboard.html', context)
 
-    def test_func(self):
-        return self.request.user.groups.filter(name='Staff').exists()
+    # def test_func(self):
+    #     return self.request.user.groups.filter(name='Staff').exists()
 
 class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
     def get(self, request, pk, *args, **kwargs):
@@ -51,8 +51,8 @@ class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
 
         return render(request, 'restaurant/order_detail.html', context)
 
-    def test_func(self):
-        return self.request.user.groups.filter(name='Staff').exists()
+    # def test_func(self):
+    #     return self.request.user.groups.filter(name='Staff').exists()
 
 
 class CreateMenu(LoginRequiredMixin, UserPassesTestMixin, View):
@@ -77,5 +77,5 @@ class CreateMenu(LoginRequiredMixin, UserPassesTestMixin, View):
         }
         return render(request, 'restaurant/create_menu.html', context)
 
-    def test_func(self):
-        return self.request.user.groups.filter(name='Staff').exists()
+    # def test_func(self):
+    #     return self.request.user.groups.filter(name='Staff').exists()
