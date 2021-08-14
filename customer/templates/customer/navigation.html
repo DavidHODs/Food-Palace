@@ -1,17 +1,15 @@
 
 
 
-
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'index' %}">Food Palace</a>
-      <a class="navbar-brand" href="{% url 'restaurant:dashboard' %}"
-        >Dashboard</a
+      <a class="navbar-brand" href="{% url 'about' %}">About Us</a
       >
-      <a class="navbar-brand" href="{% url 'restaurant:create-menu' %}"
-        >Kitchen</a
-      >
+      <a class="navbar-brand" href="{% url 'menu' %}">Menu</a>
+      <a class="nav-link" href="{% url 'order' %}">Place an Order</a>
+
       <button
         class="navbar-toggler"
         type="button"
