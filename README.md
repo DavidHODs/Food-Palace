@@ -6,4 +6,4 @@ Food palace is a portfolio project. It depicts an e-payment process typical of m
 Username: Admin
 Password: foodpalace
 
-The site is hosted on food-palace.herokuapp.com
+The site is hosted on https://food-palace.herokuapp.com
