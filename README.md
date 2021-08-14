@@ -5,7 +5,7 @@ Food palace is a portfolio project. It depicts an e-payment process typical of m
 *Admin login details*
 
 
-Username: Admin
+Username: Admin or AdminI
 
 Password: foodpalace
 
