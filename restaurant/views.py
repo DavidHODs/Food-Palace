@@ -6,8 +6,8 @@ from .forms import MenuForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 # Create your views here.
-class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
-# class Dashboard(LoginRequiredMixin, View):
+# class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
+class Dashboard(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         today = datetime.today()
         orders = OrderModel.objects.filter(
@@ -29,11 +29,11 @@ class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
         }
         return render(request, 'restaurant/dashboard.html', context)
 
-    def test_func(self):
-        return self.request.user.groups.filter(name='Staff').exists()
+    # def test_func(self):
+    #     return self.request.user.groups.filter(name='Staff').exists()
 
-class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
-# class OrderDetails(LoginRequiredMixin, View):
+# class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
+class OrderDetails(LoginRequiredMixin, View):
     def get(self, request, pk, *args, **kwargs):
         order = OrderModel.objects.get(pk=pk)
         context = {
@@ -53,12 +53,12 @@ class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
 
         return render(request, 'restaurant/order_detail.html', context)
 
-    def test_func(self):
-        return self.request.user.groups.filter(name='Staff').exists()
+    # def test_func(self):
+    #     return self.request.user.groups.filter(name='Staff').exists()
 
 
-class CreateMenu(LoginRequiredMixin, UserPassesTestMixin, View):
-# class CreateMenu(LoginRequiredMixin, View):
+# class CreateMenu(LoginRequiredMixin, UserPassesTestMixin, View):
+class CreateMenu(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         menu_items = MenuItem.objects.all()
         form =  MenuForm()
@@ -80,5 +80,5 @@ class CreateMenu(LoginRequiredMixin, UserPassesTestMixin, View):
         }
         return render(request, 'restaurant/create_menu.html', context)
 
-    def test_func(self):
-        return self.request.user.groups.filter(name='Staff').exists()
+    # def test_func(self):
+    #     return self.request.user.groups.filter(name='Staff').exists()
