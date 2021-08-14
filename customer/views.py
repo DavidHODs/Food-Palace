@@ -18,16 +18,21 @@ class About(View):
 
 class Order(View):
     def get(self, request, *args, **kwargs):
-        appetizers = MenuItem.objects.filter(category__name__contains='Appetizer')
-        entres = MenuItem.objects.filter(category__name__contains='Entre')
-        desserts = MenuItem.objects.filter(category__name__contains='Dessert')
-        drinks = MenuItem.objects.filter(category__name__contains='Drink')
+        # appetizers = MenuItem.objects.filter(category__name__contains='Appetizer')
+        # entres = MenuItem.objects.filter(category__name__contains='Entre')
+        # desserts = MenuItem.objects.filter(category__name__contains='Dessert')
+        # drinks = MenuItem.objects.filter(category__name__contains='Drink')
+        menu_items = MenuItem.objects.all()
+
+        # context = {
+        #     'appetizers':appetizers,
+        #     'entres':entres,
+        #     'desserts':desserts,
+        #     'drinks':drinks
+        # }
 
         context = {
-            'appetizers':appetizers,
-            'entres':entres,
-            'desserts':desserts,
-            'drinks':drinks
+            'menu_items':menu_items
         }
 
         return render(request, 'customer/order.html', context)
