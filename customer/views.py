@@ -4,7 +4,6 @@ from django.core.mail import send_mail
 from .models import OrderModel, MenuItem, Category
 from django.db.models import Q
 import json
-import json
 # Create your views here.
 class Index(View):
     def get(self, request, *args, **kwargs):
